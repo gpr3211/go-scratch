@@ -77,7 +77,7 @@ function M.setup(opts)
 		local current_file = vim.fn.expand("%:p")
 		run_project(current_file)
 	end, {})
-	vim.api.nvim_create_user_command("ScratchChdir", function()
+	vim.api.nvim_create_user_command("ScratchNew_base_dir", function()
 		local new_path = vim.fn.input("Enter new root dir: ")
 		if new_path == "" then
 			print("Empty proj dir, no change")
