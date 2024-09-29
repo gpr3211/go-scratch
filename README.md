@@ -43,17 +43,20 @@ require('custom.plugins.go-scratch.go-scratch').setup {
 ```
     
 
-1.promps for a new project inside your base_path and inits a go module with the name
+1.    Promps for a new project inside your base_path and inits a go module with the name.
 
+2. Creates a main.go file inside with basic code.
 
-2. creates a main.go file inside with basic code
+3. Opens a vertically split window with your new scratch project
 ```
 :ScratchRun
 ```
-1. Saves the file and runs it. Output is shown in neovim terminal bufffer window
+1. Saves the file and runs it. Output is shown in neovim terminal bufffer window.
 ```
 :ScratchChdir
 ```
 1. Prompts for a new base_dir. Use with caution !!!
+
+### Now you can test small snippets of code locally and fast :) you Go playground for neovim.
   
    ### Enjoy :)
