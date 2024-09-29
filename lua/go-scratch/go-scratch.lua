@@ -7,10 +7,12 @@ M.config = {
 	go_mod_name = "",
 }
 
+-- create_directory ... creates a dir :)
 local function create_directory(path)
 	vim.fn.mkdir(path, "p")
 end
 
+-- inits a new go mod when creating a scratch
 local function init_go_mod(path, mod_name)
 	local cmd = string.format("cd %s && go mod init %s", vim.fn.shellescape(path), mod_name)
 	vim.fn.system(cmd)
