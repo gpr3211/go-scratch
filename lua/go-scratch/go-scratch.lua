@@ -39,6 +39,7 @@ local function run_project(file_path)
 	vim.cmd("cd " .. vim.fn.fnameescape(project_dir))
 
 	-- Run the Go project and display the output in the command-line area
+	vim.cmd(":w")
 	vim.cmd("!go run .")
 
 	-- Change back to the original directory
