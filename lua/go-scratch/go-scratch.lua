@@ -72,12 +72,12 @@ function M.setup(opts)
 	M.config = vim.tbl_extend("force", M.config, opts or {})
 
 	-- Create user commands
-	vim.api.nvim_create_user_command("ScratchNew", M.create_go_project, {})
+	vim.api.nvim_create_user_command("Scratch", M.create_go_project, {})
 	vim.api.nvim_create_user_command("ScratchRun", function()
 		local current_file = vim.fn.expand("%:p")
 		run_project(current_file)
 	end, {})
-	vim.api.nvim_create_user_command("ScratchNew_base_dir", function()
+	vim.api.nvim_create_user_command("ScratchChDir", function()
 		local new_path = vim.fn.input("Enter new root dir: ")
 		if new_path == "" then
 			print("Empty proj dir, no change")
