@@ -39,7 +39,7 @@ require('custom.plugins.go-scratch.go-scratch').setup {
 
 ### II. Commands
 ```
-:ScratchNew
+:Scratch
 ```
     
 
