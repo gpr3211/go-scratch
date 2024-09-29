@@ -1,4 +1,8 @@
 # go-scratch Neovim plugin
+##  *** Your personal Go Playground ***
+### Requires
+    neovim 0.10.
+    Linux
 
 ## I. Installation
 
@@ -21,33 +25,44 @@ require('lazy').setup({
 ...
 ```
 
-    - go_mod_name is a prefix to the go  modules created . github in example.
-    - base_path is the root folder where new projects will be created. You can place in "/tmp" if you want to discard periodically
+     go_mod_name is a prefix to the go  modules created.
+     base_path is the root folder where new projects will be created. You can place in "/tmp" if you want to discard periodically.
 
 ## Manual Method
     
     
-    1. copy lua file inside    ~/.config/nvim/lua/custom/plugins  
-
-    2. add this to init.lua
+### 1. copy lua file inside   
 ```
-require('custom.plugins.go-scratch.go-scratch').setup {
+ ~/.config/nvim/lua/custom/plugins  
+```
+###    2. add this to init.lua
+```
+require('custom.plugins.go-scratch').setup {
         base_path = vim.fn.expand '~/go_scratch', -- Adjust this path as needed
         go_mod_name = 'github.com/gpr3211', -- Adjust this to your preferred module prefix
     }
 ```
 
-### II. Commands
+## II. Commands
 ```
 :Scratch
 ```
     
 
-1.    Promps for a new project inside your base_path and inits a go module with the name.
+1. Promps for a new project created with root at base_path and inits a go module with the name and go_mod_name as prefix.
 
-2. Creates a main.go file inside with basic code.
+2. Creates a main.go file inside with the following code:
+```
+package main
 
-3. Opens a vertically split window with your new scratch project
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, Go!")
+}
+```
+
+4. Opens a vertically split window with your new scratch project
 ```
 :ScratchRun
 ```
@@ -57,6 +72,6 @@ require('custom.plugins.go-scratch.go-scratch').setup {
 ```
 1. Prompts for a new base_dir. Use with caution !!!
 
-### Now you can test small snippets of code locally and fast :) you Go playground for neovim.
+### Now you can test small snippets of code locally and fast :) 
   
    ### Enjoy :)
