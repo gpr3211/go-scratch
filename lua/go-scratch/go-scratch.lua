@@ -80,12 +80,21 @@ function M.setup(opts)
 		run_project(current_file)
 	end, {})
 	vim.api.nvim_create_user_command("ScratchChDir", function()
-		local new_path = vim.fn.input("Enter new root dir: ")
-		if new_path == "" then
-			print("Empty proj dir, no change")
-		end
-
-		M.config.base_path = new_path
+		vim.ui.input({
+			prompt = "Enter new root dir: ",
+			completion = "dir",
+			default = M.config.base_path,
+		}, function(new_path)
+			if new_path == nil then
+				-- User cancelled the input
+				return
+			elseif new_path == "" then
+				print("Empty proj dir, no change")
+			else
+				M.config.base_path = new_path
+				print("Base path changed to: " .. new_path)
+			end
+		end)
 	end, {})
 end
 
