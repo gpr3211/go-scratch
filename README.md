@@ -62,7 +62,7 @@ func main() {
 }
 ```
 
-4. Opens a vertically split window with your new scratch project
+3. Opens a vertically split window with your new scratch project
 ```
 :ScratchRun
 ```
